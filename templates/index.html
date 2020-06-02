@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SMS | Home</title>
+
+    <script src="{{ url_for('static',    filename='js/notification.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',    filename='css/main.css') }}">
+</head>
+<body>
+    <h2>SMS App</h2>
+
+    <div>
+        <div>
+            <h4>Send SMS</h4>
+            <form action="/" method="post">
+                <div>
+                    <ul>
+                        <li>
+                            <label for="number">Phone number (E164 format)</label>
+                            <input type="text" name="number" id="number" placeholder="+12223334444" />
+                            </li>
+                        <li>
+                            <label>Message</label>
+                            <input type="text" name="message" id="message" />
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="box">
+            <form action="/subscribe" method="post">
+                <div>
+                    <ul>
+                        <li>
+                            <label for="webhook">Webhook host URL (ref. README for details)</label>
+                            <input type="text" name="webhook" id="webhook" />
+                         </li>
+                    </ul>
+                </div>
+                <button type="submit">Subscribe</button>
+            </form>
+            <h4>SMS Notification</h4>
+            <div id="notification"></div>
+        </div>
+    </div>
+
+    <div>
+        <p>{{message}}</p>
+    </div>
+
+    <script>
+        if (window.smsNotification) {
+            setInterval(window.smsNotification.render, 5000)
+        }
+    </script>
+</body>
+</html>
