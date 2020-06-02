@@ -1,4 +1,4 @@
-# Kandy-cpaas2-sample-sms-python
+# kandy-cpaas2-sample-sms-python
 
 This is a sms application where a user can send an sms. Subscribe sms notification and receive real-time sms events (inbound, outbound etc notification).
 
@@ -24,11 +24,11 @@ This is a sms application where a user can send an sms. Subscribe sms notificati
 
 There are a configuration variables (check `constants.py` file) to make the application simpler. Some of the variables are pre-filled and some left blank which left on the user to place appropriate values. All the variables are mandatory.
 
-ENV KEY       | Description
-------------- | -------------
-CLIENT_ID     | Private project key
-CLIENT_SECRET | Private project secret
-BASE_URL      | URL of the CPaaS server to use
+ENV KEY        | Description
+-------------  | -------------
+CLIENT_ID      | Private project key
+CLIENT_SECRET  | Private project secret
+BASE_URL       | URL of the CPaaS server to use
 SENDER_NUMBER  | Phone number purchased in CPaaS portal (sender phone number)
 
 ## Usage
@@ -58,7 +58,7 @@ Once `ngrok` installed, run the following command
 ngrok http 5000
 ```
 
-5000 is the default `PORT` where the flask app runs. You need to run the ngrok command mentioning the exact port.
+Where 5000 is the default `PORT` where the flask app runs. You need to run the ngrok command mentioning the exact port.
 Once `ngrok` starts forwarding the `localhost`, you would find a similar kind of message in your screen.
 
 ```bash
